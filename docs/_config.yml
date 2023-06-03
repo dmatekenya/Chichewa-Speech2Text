@@ -1,0 +1,33 @@
+# Book settings
+title: Automated Speech Recognition for Chichewa
+author: Dunstan Matekenya
+logo: docs/images/logo.png
+only_build_toc_files: true
+
+repository:
+  url: https://github.com/dmatekenya/Chichewa-Speech2Text
+  branch: main
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar: false
+  extra_navbar: ""
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://github.com/dmatekenya/Chichewa-Speech2Text
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks: force
+  allow_errors: true
+  exclude_patterns:
+    - notebooks/nasa-apod.ipynb
+
+#######################################################################################
+# Sphinx settings
+sphinx:
+  config:
+    html_last_updated_fmt: "%b %d, %Y"

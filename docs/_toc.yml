@@ -1,0 +1,14 @@
+format: jb-book
+root: README
+
+parts:
+  - caption: INTRODUCING CHICHEWA SPEECH2TEXT
+    numbered: False
+    chapters:
+      - file: notebooks/about-chichewa
+  
+  - caption: EXPERIMENTS
+    numbered: False
+    chapters:
+      - file: notebooks/google-translation-evaluation
+  

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "chichewa-asr",
+  "private_key_id": "0808ad367396faafac2bf99ddaf882afa838ec42",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0m20pBlM7SIST\nRBETO4815UPrSCvltM6hcL0vfQtIzoyKNr9/shqu/iOA27PDcbERFAARMrwvXD0J\nQ156x/xDOkpx/SjrHe2d/iz4JLE8yo2YPt2MyOJl2gOR6sOlohr7aO66apBY6z/F\nw+MHDkP4wMCsz70YD+zjbJwaMFfKD8/P3YJUq9j8AyRiHIFlwq+RO3OgNwdDvYfo\niRhv0ULxGNWKICr8a5bdLcks8zi0yXSiOBNvGoCmZ/8f2zBomGU8XoYiLVu+61Xa\ndXG0BU7/Yzkt4DIxc5Vx48uejU4tQL+ZYH0106UQVR+KBZfx/WVyyMMMhUN0/QzW\n7dsswhMtAgMBAAECggEAAiPnYWzG7jDztT6n82lt13cpoPwvVHQ8TFuq096KC+2H\nfBjAU7yRBAz/ROkEifficNqJQUSFA+pDRwmXTu8b92tRL4d9689b0TTKIDwjnOI+\nii5/d9LM8Acvd0/FzF3JhETbs2CRcQIuRbiGpVAgQ797rU5ztxtiAZIz9E06jrMf\nTk1Od0P/N7g32xId8oDtwN/fBD+EndaLfAOzV2ZDGtWR8O1BhuW0pvsFgdnRQbbP\nSMPufK6D+8o0CWRcGtNvFUrcIEqSFfdOt19aqBUugidiFJ41UgzHhITbVl/NovZv\nKUIB8x2ufanmglJpnwJ/43OvsrQZ/MVvFl4EIYFR1wKBgQDXm/lu2uaBywKeYtDu\nDKTqSugWFP68w/QEFVkLhe01gtoQcSomCp80jrL/RoMRGnxY/oFRW7zybkkalng9\n0Y+Fr/DYafMDwxHBzOk1PqShHo9z1vduPvrxPFFDDaBsU2hVPrEiYqARnZr+3MYY\nhkiK3ENhzO/5LoArfKVi/CAb/wKBgQDWcNiVKRRH72e/wG7lDlqGMaC+NNLxLGo+\nvMRXtMlfh/m1woXGOIPImwnzOP2jtU8NpkefjyluTGh6mIdRTsoZHWgUbQIEkJop\n61poqRKasXOVyOjDgqwpd6Y0ZBJQO4u0BIfRpelJXafdP97QjofC51qkxT9WUNTD\nASlabbUA0wKBgBKXVWu0nlmkuqYTmTZdir7VFKwKxWhbcSgE+zeeJbUOgmUWjO7Y\nzZ+HinGuj9CiuwQlddshEOrKja0oOlgCQODjKd5PTHAPmvFeDOHVc/acnvv7FjzA\nW3z/mXYxr5qHmqB3FmkDng/Gyj2dpcspkQnAMmM1e5+93bliNxSQ7ufbAoGAftde\n9NPIoEg22RBNSAW2e/vs9bUvNOKtsZBcnvhbyLsYdG+sSzRwlv9F4m1KckQzj4JU\niUfYHNrrTeDc4bY2Cqb/Ql28PND/r138Kz4euAvQr7+YFtU7WofgcsrinjyqhP/N\nCrAVjoTsXw2BkWFNYncQgbf+n+LOBs6wFEIiN2sCgYA+zY6qBOYtlIiy+gupizID\ni5p3WbFjdXY/SS6NTa0l0ktFQyIpQ/nEZV3QNEgfxuhAYiDq6s/PyUTwHXdWma9Z\nOfmrebyKdmcloDsukM8Vid8YzmuTU4pIpjMqwihZHeQi61PxJAeJsMXopxMfYHx3\n3jIl+7U8swsbmxE9eiV1+Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "base-account@chichewa-asr.iam.gserviceaccount.com",
+  "client_id": "115965401874790387392",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/base-account%40chichewa-asr.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
