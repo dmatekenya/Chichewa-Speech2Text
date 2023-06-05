@@ -2,18 +2,17 @@ format: jb-book
 root: README
 
 parts:
-  - caption: INTRODUCING CHICHEWA SPEECH2TEXT
+  - caption: ABOUT THIS PROJECT
     numbered: False
     chapters:
       - file: notebooks/about-chichewa
   
- - caption: DATASETS
+  - caption: DATASETS
     numbered: False
     chapters:
       - file: docs/datasets
-
+  
   - caption: EXPERIMENTS
     numbered: False
     chapters:
-      - file: notebooks/google-translation-evaluation
-  
+      - file: notebooks/MT-benchmarking

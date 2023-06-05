@@ -1,5 +1,6 @@
-# Speech and other NLP Datasets
-The idea in this chapter is to provide links to publicly available NLP datasets for Chichewa.
+# Available NLP Datasets
+In this section, we provide documentation about speech, machine translation and other NLP datasets which can be used for advancing NLP capabilities for this language. The datasets are presented based on major NLP tasks of Automated Speech Recognition (ASR) as speech datasets, machine translation and other NLP tasks which can be language modelling, text summarization and more.
+
 ## Speech
 1. [speech dataset for Chichewa
 ](https://doi.org/10.5281/zenodo.6595625). This dataset was collected as part of the Zindi-Google NLP competition which I participated in. The data consists of varied length audio clips in Chichewa and accompanying transcriptions. See [google-asr-hack-series-africa-asr-data-challenge](https://zindi.africa/competitions/google-asr-hack-series-africa-asr-data-challenge) for details of the competition. 
