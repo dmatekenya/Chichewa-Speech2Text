@@ -21,7 +21,8 @@ html:
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
+  timeout: -1
   allow_errors: true
   exclude_patterns:
     - notebooks/nasa-apod.ipynb
