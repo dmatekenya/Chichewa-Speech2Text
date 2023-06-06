@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Speech Recognition(ASR) for Chichewa &#8212; Automated Speech Recognition for Chichewa</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="canonical" href="https://github.com/dmatekenya/Chichewa-Speech2Text/README.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chichewa Speakers" href="notebooks/about-chichewa.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ABOUT THIS PROJECT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/about-chichewa.html">Chichewa Speakers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATASETS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="docs/datasets.html">Available NLP Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">EXPERIMENTS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/MT-benchmarking.html">Benchmarking Google Translation for Chichewa</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text/edit/main/README.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Automated Speech Recognition(ASR) for Chichewa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speech-and-other-nlp-datasets">Speech and other NLP Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mozilla-common-voice">Mozilla common voice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zindi-google-nlp-competition">Zindi-Google NLP competition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-nlp-datasets">Other NLP datasets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancing-nlp-models">Enhancing NLP models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-and-contributing">Usage and contributing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-contributions">Data contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-contributions">Technical contributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contacts">Contacts</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="automated-speech-recognition-asr-for-chichewa">
+<h1>Automated Speech Recognition(ASR) for Chichewa<a class="headerlink" href="#automated-speech-recognition-asr-for-chichewa" title="Permalink to this headline">#</a></h1>
+<p>This repository shares results, code and activities for work whose goal is to contribute to improvements in ASR or speech to text technologies (e.g., NLP models)  for <span style="color:#3EACAD">Chichewa</span> which happens to be my native language and also the major language spoken in Malawi. In Zambia and Mozambique, Chichewa is also known as <em>Chinyanja</em>,  <em>Nyanja</em> or <em>Chewa</em>. At the time of writing of this document, over <span style="color:#3EACAD">21 million people</span> speak the language. The project has two main goals as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Generate speech and other NLP datasets.</strong> Contribute to generation of open source speech datasets for the language. Since quality of results from speech systems is inevitably connected to availability and quality of other NLP datasets in the language, the project is also interested in contributing to other NLP datasets such as those for translations.</p></li>
+<li><p><strong>Enhance ASR models.</strong> Since Chichewa is a low resource language, the quality of speech to texts results from platforms such as Google is poor. As such, the goal here is to fine-tune these large language models with properly curated data to improve performance of the models.  Again, this applies to other downstream NLP tasks such as <em>machine translation</em>, <em>text summarization</em> and <em>question answering</em>. Furthermore, improving accessibility and usage of these models among locals in the target countries is another important objective.</p></li>
+</ol>
+<p>The repository contains the following folders:</p>
+<ul>
+<li><p><strong>docs/</strong></p>
+<blockquote>
+<div><p>This folder contains documents pertaining to the project and the repo itsself.</p>
+</div></blockquote>
+</li>
+<li><p><strong>data/</strong></p>
+<blockquote>
+<div><p>The datasets in this folder will not be uploaded to the repo as most of them are too large. However, finalized datasets will be shared through platforms such as Zenodo.</p>
+</div></blockquote>
+</li>
+<li><p><strong>src/</strong></p>
+<blockquote>
+<div><p>All the Python and other code used is placed here. For example, this folder contains source code for the speech data collection app: LIG-Akuma</p>
+</div></blockquote>
+</li>
+<li><p><strong>models/</strong></p>
+<blockquote>
+<div><p>Any models available after tuning will be here</p>
+</div></blockquote>
+</li>
+<li><p><strong>notebooks/</strong></p>
+<blockquote>
+<div><p>All notebook files are here.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="speech-and-other-nlp-datasets">
+<h2>Speech and other NLP Datasets<a class="headerlink" href="#speech-and-other-nlp-datasets" title="Permalink to this headline">#</a></h2>
+<div class="section" id="mozilla-common-voice">
+<h3>Mozilla common voice<a class="headerlink" href="#mozilla-common-voice" title="Permalink to this headline">#</a></h3>
+<p>One of the objectives of this project is to get Chichewa on the  <a class="reference external" href="https://commonvoice.mozilla.org/en">Mozilla common voice</a> platform and accelerate collection of speech data and consequently better ASR models for the language. To this end, the process to onboard the language has already been initiated. Currently, we are in the processl what Mozilla calls <strong>language localization</strong> which involves translation of text strings from English to Chichewa. Please go to <a class="reference external" href="https://pontoon.mozilla.org/ny/">translate English to Chichewa to help with this process</a>.</p>
+</div>
+<div class="section" id="zindi-google-nlp-competition">
+<h3>Zindi-Google NLP competition<a class="headerlink" href="#zindi-google-nlp-competition" title="Permalink to this headline">#</a></h3>
+<p>Although I have had some interest in NLP as it relates to my native language, I never got myself to work on anything cooncrete until I came across the <a class="reference external" href="https://zindi.africa/competitions/google-asr-hack-series-africa-asr-data-challenge">google-asr-hack-series-africa-asr-data-challenge</a> challenge on <a class="reference external" href="https://zindi.africa">Zindi</a>[^1]. I participated in the challenge and came in first place and in the process published a <a class="reference external" href="https://doi.org/10.5281/zenodo.6595625">speech dataset for Chichewa
+</a> on Zenodo.</p>
+<div class="section" id="other-nlp-datasets">
+<h4>Other NLP datasets<a class="headerlink" href="#other-nlp-datasets" title="Permalink to this headline">#</a></h4>
+<p>I have also found the following datasets on Chichewa:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doi.org/10.5281/zenodo.4315018">Chichewa news articles dataset</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.5281/zenodo.3731994">Spoken Chichewa corpus.</a></p></li>
+</ol>
+<p>[^1]. A data science competition platform with focus on Africa challenges</p>
+</div>
+</div>
+</div>
+<div class="section" id="enhancing-nlp-models">
+<h2>Enhancing NLP models<a class="headerlink" href="#enhancing-nlp-models" title="Permalink to this headline">#</a></h2>
+<p>The ultimate goal of this work is to bring to Chichewa speakers high quality and accurate speech recognition systems as well as other langauge technology taks such as machine translation. Thus, once we have propery curated data, we need to use it to enhance existing models such as transformers to tune them so that they perform better on the langauge. The work on showing how large open models such as <a class="reference external" href="https://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/">Facebook wav2vec </a>  can be fine-tuned to improve perfomance on Chichewa is still on-going and weill share results soon.</p>
+</div>
+<div class="section" id="usage-and-contributing">
+<h2>Usage and contributing<a class="headerlink" href="#usage-and-contributing" title="Permalink to this headline">#</a></h2>
+<p>There are several ways to contribute to this project as follows:</p>
+<div class="section" id="data-contributions">
+<h3>Data contributions<a class="headerlink" href="#data-contributions" title="Permalink to this headline">#</a></h3>
+<p>For low resource langauge such as Chichewa, the main reason why they lag behind in NLP technologies is due to lack of data. As such, one of the biggest contribution you can contribute is to share your data as a native speaker of the language and/or contribute to data collection initiatives for non-speakers.</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://pontoon.mozilla.org/ny/">Translate English to Chichewa to help</a> get the langauge on Mozilla common voice platform.</p></li>
+<li><p><strong>Share audio clips in Chichewa.</strong> If you have any audio clips in Chichewa, you can share them. Please use the contact email below to inquire how.</p></li>
+<li><p><strong>Share Chichewa text corpora.</strong> If you have Chichewa books, news articles, documents  or any other texts, please share them as these are useful for creating language models.lease use the contact email below to inquire how.</p></li>
+<li><p><strong>Share expertise.</strong> If you are a Chichewa linguists who is passionate about language technologies, please contact me so that we can work together.</p></li>
+</ol>
+</div>
+<div class="section" id="technical-contributions">
+<h3>Technical contributions<a class="headerlink" href="#technical-contributions" title="Permalink to this headline">#</a></h3>
+<p>If you are a data scientist, machine learning engineer, computational linguist, linguist or any other person with interest in advancing NLP for low-resource languages or with specific interest in Chichewa, you can contribute code by the following:</p>
+<ol class="arabic simple">
+<li><p><strong>Benchmarking models.</strong> Test performance of open source models, online services (e.g., Goog;e translate) for this language across different NLP tasks such as ASR, machine translation, text summarization and more</p></li>
+<li><p><strong>Fine-tune models.</strong> Use open source Chichewa data and any other data to stretch performance of open source models (e.g., BERT) on this language</p></li>
+<li><p><strong>Any other activity/collaboration.</strong> which may lead to advancement of NLP for Chichewa.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="contacts">
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">#</a></h2>
+<p>If you would like to get involved in this project, please contact me on the email below:</p>
+<ul class="simple">
+<li><p><strong>Dunstan Matekenya:</strong> <a class="reference external" href="mailto:dmatekenya&#37;&#52;&#48;gmail&#46;com">dmatekenya<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="notebooks/about-chichewa.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chichewa Speakers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#speech-and-other-nlp-datasets">Speech and other NLP Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mozilla-common-voice">Mozilla common voice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zindi-google-nlp-competition">Zindi-Google NLP competition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-nlp-datasets">Other NLP datasets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancing-nlp-models">Enhancing NLP models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-and-contributing">Usage and contributing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-contributions">Data contributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-contributions">Technical contributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contacts">Contacts</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dunstan Matekenya
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Jun 06, 2023.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

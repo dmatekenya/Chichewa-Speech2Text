@@ -1,0 +1,1232 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benchmarking Google Translation for Chichewa &#8212; Automated Speech Recognition for Chichewa</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/MT-benchmarking';</script>
+    <link rel="canonical" href="https://github.com/dmatekenya/Chichewa-Speech2Text/notebooks/MT-benchmarking.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Available NLP Datasets" href="../docs/datasets.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ABOUT THIS PROJECT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about-chichewa.html">Chichewa Speakers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATASETS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/datasets.html">Available NLP Datasets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">EXPERIMENTS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarking Google Translation for Chichewa</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text/edit/main/notebooks/MT-benchmarking.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dmatekenya/Chichewa-Speech2Text/issues/new?title=Issue%20on%20page%20%2Fnotebooks/MT-benchmarking.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/MT-benchmarking.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Benchmarking Google Translation for Chichewa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-input-data-files">Setup input data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-utility-functions">Define utility functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score">BLEU score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-for-evaluation">Datasets for evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-translations-based-on-online-sources">Dataset-1: Translations based on online sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-2-profensional-translation-of-a-political-speech">Dataset-2: Profensional translation of a political speech</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-3-translation-for-a-health-related-public-project">Dataset-3: Translation for a health related public project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-setup">Evaluation setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-computation">BLEU score computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-translation-api">Google translation API</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-bleu-score-for-english-to-chichewa-datasets">Calculate BLEU score for English to Chichewa datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-two-translators">BLEU score for dataset-1: Two translators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-translator-1">BLEU score for dataset-1: Translator-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-translator-2">BLEU score for dataset-1: Translator-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-2">BLEU score for dataset-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-3">BLEU score for dataset-3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-scores-for-other-languages">BLEU scores for other languages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-spanish">BLEU score for English to Spanish</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-luganda">BLEU score for English to Luganda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-german">BLEU score for English to German</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-neural-machine-translation-nmt-for-english-to-chichewa-translation">Google Neural Machine Translation (NMT) for English to Chichewa translation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-neural-machine-translation-nmt-on-otther-languages">Google Neural Machine Translation (NMT) on otther languages.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-about-about-evalauting-machine-translation-systems">Notes about about evalauting Machine Translation Systems</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="benchmarking-google-translation-for-chichewa">
+<h1>Benchmarking Google Translation for Chichewa<a class="headerlink" href="#benchmarking-google-translation-for-chichewa" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<p><strong>Author:</strong> Dunstan Matekenya | <strong>Date:</strong> June 3, 2023</p>
+<p>In this notebook, the goal is to investigate the accuracy of machine translation (MT) of English to Chinyanja. Note that I will often use Chichewa instead of Chinyanja but officially, this language is known as Chinyanja (ny). Out of all NLP capabilities for this language, MT is probably the most well developed and also commonly used.  However, to the best of my knowledge, I haven’t found any publicly available doocumentation of the quality (accuracy) of Google translations for Chichwa. In this case, I will focus on the task of translating from <strong>English to Chichewa.</strong> In particular, I will address two questions in this notebook.</p>
+<ol class="arabic simple">
+<li><p>Whats the quality of the translations from Google English to Chichewa translations?</p></li>
+<li><p>How does this quality compare to other high resource and low resource languages?</p></li>
+</ol>
+<p>I believe responding to these questions is obviously important. For example, if one intends to use Google translate for official documents or tasks other daily personal use, then its important to understand the quality of the translations. Thus, having this information in the public domain is useful as Google often doesnt publish these metrics publicly.</p>
+<p>For measuring the quality of translations, I elect to use the BLEU metric which is also used by Google and is perhaps the most commonly used metric. In the rest of the notebook, I provide the following:</p>
+<ul class="simple">
+<li><p>Brief description of the BLEU metric</p></li>
+<li><p>English to Chichewa parallel corpus used for tests.</p></li>
+<li><p>Computation of BLEU score over Chichewa and other datasets.</p></li>
+<li><p>Discussio of the results in the summary section.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="c1"># nltk.download(&#39;all&#39;)</span>
+<span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">translate_v2</span> <span class="k">as</span> <span class="n">translate</span>
+<span class="kn">from</span> <span class="nn">nltk.translate.bleu_score</span> <span class="kn">import</span> <span class="n">sentence_bleu</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span><span class="p">,</span> <span class="n">sent_tokenize</span>
+<span class="kn">from</span> <span class="nn">googletrans</span> <span class="kn">import</span> <span class="n">Translator</span><span class="p">,</span> <span class="n">LANGUAGES</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setup-input-data-files">
+<h2>Setup input data files<a class="headerlink" href="#setup-input-data-files" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DIR_DATA</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;machine-translation&#39;</span><span class="p">)</span>
+
+<span class="c1"># English to Chichewa Parallel corpus</span>
+<span class="n">DIR_CHICH_DATA</span> <span class="o">=</span> <span class="n">DIR_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;chich2english&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2CH_ONLINE</span> <span class="o">=</span> <span class="n">DIR_CHICH_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;english2chich-online-texts.csv&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2CH_PROF</span> <span class="o">=</span> <span class="n">DIR_CHICH_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;english2chich-prof-translator.csv&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2CH_WEBSITE</span> <span class="o">=</span> <span class="n">DIR_CHICH_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;chich2english-website-sourced.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># English to other languages</span>
+<span class="n">FILE_EN2SP</span> <span class="o">=</span> <span class="n">DIR_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;spa.txt&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2LUGANDA</span> <span class="o">=</span> <span class="n">DIR_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;Luganda.csv&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2DE_EN</span> <span class="o">=</span> <span class="n">DIR_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;train.en.txt&#39;</span><span class="p">)</span>
+<span class="n">FILE_EN2DE_DE</span> <span class="o">=</span> <span class="n">DIR_DATA</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;train.de.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-utility-functions">
+<h2>Define utility functions<a class="headerlink" href="#define-utility-functions" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">chich_cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">en_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_lan</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes BLUE score over all sentences in a Dataframe.</span>
+<span class="sd">    df_sent: Dataframe with sentences in English translated to Chichewa</span>
+<span class="sd">    chich_cols: Columns containing human translated Chichewa sentences</span>
+<span class="sd">    en_col: Column containing original English sentence to be translated</span>
+<span class="sd">    </span>
+<span class="sd">    returns the following:</span>
+<span class="sd">        - mean BLEU score over all sentences successfully translated and number of sentences</span>
+<span class="sd">        - Total sentences where BLEU is run</span>
+<span class="sd">        - Total number of characters </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sent_cnts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">char_cnts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_sent</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">eng_sent</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">en_col</span><span class="p">]</span>
+            <span class="n">eng_sent_tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">eng_sent</span><span class="p">)</span>
+            <span class="n">chich_google</span> <span class="o">=</span> <span class="n">translate_with_google_api</span><span class="p">(</span><span class="n">dest</span><span class="o">=</span><span class="n">target_lan</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">eng_sent</span><span class="p">)</span>
+            <span class="n">chich_google_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">tok</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">chich_google</span><span class="p">)</span> <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+            <span class="n">sent_cnts</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">char_cnts</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">eng_sent_tokens</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">human_chich_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">chich_cols</span><span class="p">:</span>
+                <span class="n">chich_tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+                <span class="n">chich_tokens_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">chich_tokens</span> <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+                <span class="n">human_chich_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chich_tokens_clean</span><span class="p">)</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">sentence_bleu</span><span class="p">(</span><span class="n">references</span><span class="o">=</span><span class="n">human_chich_tokens</span><span class="p">,</span> <span class="n">hypothesis</span><span class="o">=</span><span class="n">chich_google_tokens</span><span class="p">)</span>
+            <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BLEU CALCULATION FAILED ...&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            
+    <span class="n">mean_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">mean_score</span><span class="p">,</span> <span class="n">sent_cnts</span><span class="p">,</span> <span class="n">char_cnts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translate_with_google_api</span><span class="p">(</span><span class="n">dest</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">use_paid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Translates text into the target language using Google using either </span>
+<span class="sd">    the paid Cloud Translation API or free Googletrans Python package. </span>
+
+<span class="sd">    Target must be an ISO 639-1 language code.</span>
+<span class="sd">    See https://g.co/cloud/translate/v2/translate-reference#supported_languages</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Google commercial API</span>
+    <span class="n">translate_client</span> <span class="o">=</span> <span class="n">translate</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+    
+    <span class="c1"># Google free API through Python</span>
+    <span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">use_paid</span><span class="p">:</span>
+        <span class="c1"># Text can also be a sequence of strings, in which case this method</span>
+        <span class="c1"># will return a sequence of results for each text.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">translate_client</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">target_language</span><span class="o">=</span><span class="n">dest</span><span class="p">,</span><span class="n">source_language</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;translatedText&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score">
+<h2>BLEU score<a class="headerlink" href="#bleu-score" title="Permalink to this headline">#</a></h2>
+<p>In this experiment, we use <a class="reference external" href="https://en.wikipedia.org/wiki/BLEU">BLEU (BiLingual Evaluation Understudy)</a> score as the evaluation metric simply because its the most commonly used metric in MT.
+In summary, BLEU measures a candidate translation closeneness to references sentences (ground truth) which can be one or more. A BLEU score ranges from 0 to 1 and it can be interepreted as a percentage for easier interpretation.</p>
+<p>For context, this is how Google relates BLEU score with MT system reliability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;../docs/images/BLEU-score-interpreration.png&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/35d1f2c3ad182fefb60bb4adbe96a46ac8cf14f6e910e20f3db3b810118b3f34.png" src="../_images/35d1f2c3ad182fefb60bb4adbe96a46ac8cf14f6e910e20f3db3b810118b3f34.png" />
+</div>
+</div>
+</div>
+<div class="section" id="datasets-for-evaluation">
+<h2>Datasets for evaluation<a class="headerlink" href="#datasets-for-evaluation" title="Permalink to this headline">#</a></h2>
+<p>In this experiment, we use three independent datasets as follows.</p>
+<div class="section" id="dataset-1-translations-based-on-online-sources">
+<h3>Dataset-1: Translations based on online sources<a class="headerlink" href="#dataset-1-translations-based-on-online-sources" title="Permalink to this headline">#</a></h3>
+<p>In this dataset, two non-professional native speakers of Chichewa performed the translation frmon English to Chichewa. The source English sentences came from several places online: Malawi news articles, WhatsApp posts and other online translation datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_online</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FILE_EN2CH_ONLINE</span><span class="p">)</span>
+<span class="n">df_online1</span> <span class="o">=</span> <span class="n">df_online</span><span class="p">[[</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> <span class="s1">&#39;chich_shadreck&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df_online2</span> <span class="o">=</span> <span class="n">df_online</span><span class="p">[[</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> <span class="s1">&#39;chich_gloria&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df_online12</span> <span class="o">=</span>  <span class="n">df_online</span><span class="p">[[</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> <span class="s1">&#39;chich_gloria&#39;</span><span class="p">,</span> <span class="s1">&#39;chich_shadreck&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Summary Stats for Dataset-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Number of English sentences: 686&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Translator-1: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_online</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Translator-2: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_online2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4. Translator-1 and 2: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_online12</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>========================================
+ Summary Stats for Dataset-1
+========================================
+1. Number of English sentences: 686
+2. Translator-1: 686
+3. Translator-2: 275
+4. Translator-1 and 2: 245
+----------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataset-2-profensional-translation-of-a-political-speech">
+<h3>Dataset-2: Profensional translation of a political speech<a class="headerlink" href="#dataset-2-profensional-translation-of-a-political-speech" title="Permalink to this headline">#</a></h3>
+<p>A colleague, Cresencia Masautso donated this dataset to me.
+Its based on the translation she did of one of the political figure in Malawi who made
+the speech in English and she translated it to Chichewa.</p>
+<p>The dataset was created by chunking the documents into short paragraphs in ordet to have matching
+English and Chichewa <a class="reference external" href="http://texts.As">texts.As</a> such, there is only translation from one person who can be considered as a professional translator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_prof</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FILE_EN2CH_PROF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_prof</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">sent</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;english&#39;</span><span class="p">])</span>
+    <span class="n">sentences</span> <span class="o">+=</span> <span class="n">sent</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Summary Stats for Dataset-2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; 1. Number of English sentences: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>========================================
+ Summary Stats for Dataset-2
+========================================
+ 1. Number of English sentences: 259
+----------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataset-3-translation-for-a-health-related-public-project">
+<h3>Dataset-3: Translation for a health related public project<a class="headerlink" href="#dataset-3-translation-for-a-health-related-public-project" title="Permalink to this headline">#</a></h3>
+<p>A colleague, <strong>Lumbani Pete</strong> donated this dataset to me.
+Its based on the translation which was done for content which is on <a class="reference external" href="https://streetscience.info">this website</a>
+about the work on awareness about sleeping sickness caused by Tsetse flies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_wb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FILE_EN2CH_WEBSITE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_wb</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">sent</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;english&#39;</span><span class="p">])</span>
+    <span class="n">sentences</span> <span class="o">+=</span> <span class="n">sent</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Summary Stats for Dataset-3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; 1. Number of English sentences: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>========================================
+ Summary Stats for Dataset-3
+========================================
+ 1. Number of English sentences: 115
+----------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluation-setup">
+<h2>Evaluation setup<a class="headerlink" href="#evaluation-setup" title="Permalink to this headline">#</a></h2>
+<div class="section" id="bleu-score-computation">
+<h3>BLEU score computation<a class="headerlink" href="#bleu-score-computation" title="Permalink to this headline">#</a></h3>
+<p>For each dataset, we will compute a sentence level BLEU score and
+then average over all sentences in the dataset. For dataset-1 with 2 translators, we will generate three scores: one for each translator and one based on 2 reference translations from two translators. We use <code class="docutils literal notranslate"><span class="pre">sentence_bleu</span></code> function from the NLTK package to calculate sentence level BLEU.</p>
+</div>
+<div class="section" id="google-translation-api">
+<h3>Google translation API<a class="headerlink" href="#google-translation-api" title="Permalink to this headline">#</a></h3>
+<p>The Python package googletrans which is used here makes calls to [Google translate Ajax API] (<a class="reference external" href="https://translate.google.com/">https://translate.google.com/</a>) and so we can assume its using the same model used on regular Google translation on the web and mobile.</p>
+</div>
+</div>
+<div class="section" id="calculate-bleu-score-for-english-to-chichewa-datasets">
+<h2>Calculate BLEU score for English to Chichewa datasets<a class="headerlink" href="#calculate-bleu-score-for-english-to-chichewa-datasets" title="Permalink to this headline">#</a></h2>
+<div class="section" id="bleu-score-for-dataset-1-two-translators">
+<h3>BLEU score for dataset-1: Two translators<a class="headerlink" href="#bleu-score-for-dataset-1-two-translators" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_online12</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chich_shadreck&#39;</span><span class="p">,</span> <span class="s1">&#39;chich_gloria&#39;</span><span class="p">],</span> <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-1 AND TRANSLATOR-2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-1 AND TRANSLATOR-2
+=================================================================
+1. Average score: 8.52%
+2. Number of sentences translated: 245
+3. Number of characters translated: 4,490
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-dataset-1-translator-1">
+<h3>BLEU score for dataset-1: Translator-1<a class="headerlink" href="#bleu-score-for-dataset-1-translator-1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_online1</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chich_shadreck&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-1
+=================================================================
+1. Average score: 4.99%
+2. Number of sentences translated: 645
+3. Number of characters translated: 12,801
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-dataset-1-translator-2">
+<h3>BLEU score for dataset-1: Translator-2<a class="headerlink" href="#bleu-score-for-dataset-1-translator-2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_online2</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;sentence&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chich_gloria&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR DATASET-1, TRANSLATOR-2
+=================================================================
+1. Average score: 3.34%
+2. Number of sentences translated: 275
+3. Number of characters translated: 5,198
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-dataset-2">
+<h3>BLEU score for dataset-2<a class="headerlink" href="#bleu-score-for-dataset-2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_prof</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chichewa&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR DATASET-2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR DATASET-2
+=================================================================
+1. Average score: 15.75%
+2. Number of sentences translated: 61
+3. Number of characters translated: 5,114
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-dataset-3">
+<h3>BLEU score for dataset-3<a class="headerlink" href="#bleu-score-for-dataset-3" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_wb</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;chichewa&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;ny&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR DATASET-2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR DATASET-2
+=================================================================
+1. Average score: 3.64%
+2. Number of sentences translated: 102
+3. Number of characters translated: 1,546
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-scores-for-other-languages">
+<h2>BLEU scores for other languages<a class="headerlink" href="#bleu-scores-for-other-languages" title="Permalink to this headline">#</a></h2>
+<p>For the sake reference, I computed BLEU score for the following languages based purely on datasets availability</p>
+<ol class="arabic simple">
+<li><p><strong>English to Spanish.</strong> The dataset came from <a class="reference external" href="http://tatoeba.org/files/downloads/sentences_detailed.csv">Tatoeba</a></p></li>
+<li><p><strong>English to Luganda.</strong> Luganda is a language spoken in Uganda. The dataset is available on <a class="reference external" href="https://zenodo.org/record/4764039">Zenodo</a>.</p></li>
+<li><p><strong>English to German.</strong>  This is a <a class="reference external" href="https://nlp.stanford.edu/projects/nmt/">WMT’14 English-German</a></p></li>
+</ol>
+<div class="section" id="bleu-score-for-english-to-spanish">
+<h3>BLEU score for English to Spanish<a class="headerlink" href="#bleu-score-for-english-to-spanish" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FILE_EN2SP</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;sp&#39;</span><span class="p">])</span>
+<span class="n">keep</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_sp</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">sent</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">]</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span>
+        <span class="n">keep</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="n">df_sp</span> <span class="o">=</span> <span class="n">df_sp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_sp</span><span class="p">,</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sp&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR ENGLISH TO SPANISH&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR ENGLISH TO SPANISH
+=================================================================
+1. Average score: 47.73%
+2. Number of sentences translated: 330
+3. Number of characters translated: 7,530
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-english-to-luganda">
+<h3>BLEU score for English to Luganda<a class="headerlink" href="#bleu-score-for-english-to-luganda" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lug</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FILE_EN2LUGANDA</span><span class="p">,</span>  <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<span class="n">df_lug</span> <span class="o">=</span> <span class="n">df_lug</span><span class="p">[[</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;Luganda&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_lug</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2000</span><span class="p">),</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Luganda&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;lg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR ENGLISH TO LUGANDA&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR ENGLISH TO LUGANDA
+=================================================================
+1. Average score: 9.49%
+2. Number of sentences translated: 2,000
+3. Number of characters translated: 19,993
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bleu-score-for-english-to-german">
+<h3>BLEU score for English to German<a class="headerlink" href="#bleu-score-for-english-to-german" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_eng2german_wmt14dataset</span><span class="p">():</span>
+    
+    <span class="n">data_en</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">data_de</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">FILE_EN2DE_EN</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="c1"># Read and print the entire file line by line</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">data_en</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">FILE_EN2DE_DE</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="c1"># Read and print the entire file line by line</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">data_de</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="n">data_en</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="n">data_de</span><span class="p">})</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_en2de</span> <span class="o">=</span> <span class="n">load_eng2german_wmt14dataset</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">character_cnt</span> <span class="o">=</span> <span class="n">compute_bleu_score</span><span class="p">(</span><span class="n">df_sent</span><span class="o">=</span><span class="n">df_en2de</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2000</span><span class="p">),</span> <span class="n">en_col</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> 
+                                                      <span class="n">chich_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">],</span>  <span class="n">target_lan</span><span class="o">=</span><span class="s1">&#39;de&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTPSConnectionPool(host=&#39;oauth2.googleapis.com&#39;, port=443): Max retries exceeded with url: /token (Caused by NewConnectionError(&#39;&lt;urllib3.connection.HTTPSConnection object at 0x31bd03130&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; AVERAGE BLEU SCORE FOR ENGLISH TO GERMAN&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">65</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Average score: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Number of sentences translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sent_count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Number of characters translated: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">character_cnt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=================================================================
+ AVERAGE BLEU SCORE FOR ENGLISH TO GERMAN
+=================================================================
+1. Average score: 18.01%
+2. Number of sentences translated: 1,999
+3. Number of characters translated: 56,842
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<div class="section" id="google-neural-machine-translation-nmt-for-english-to-chichewa-translation">
+<h3>Google Neural Machine Translation (NMT) for English to Chichewa translation<a class="headerlink" href="#google-neural-machine-translation-nmt-for-english-to-chichewa-translation" title="Permalink to this headline">#</a></h3>
+<p>An average BLEU score was compute for 5 scenarios as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Dataset-1:</strong> English to Chichewa translations with two translators. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">8.63%</span></code></p></li>
+<li><p><strong>Dataset-1:</strong> English to Chichewa translations using a single human translator. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">4.92%</span></code></p></li>
+<li><p><strong>Dataset-1:</strong> English to Chichewa translations using a single human translator. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">3.43%</span></code></p></li>
+<li><p><strong>Dataset-2:</strong> English to Chichewa translations using a single human professional translator. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">15.88%%</span></code></p></li>
+<li><p><strong>Dataset-3:</strong> English to Chichewa translations using a single/multiple translators. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">3.64%%</span></code></p></li>
+</ol>
+<p>In all the cases, the BLEU score is less than 20% which according to <a class="reference external" href="https://cloud.google.com/translate/automl/docs/evaluate">Google’s guidelines</a>, overral these BLEU scores mean the translations are almost useless to very hard to get a gist of the translation.</p>
+</div>
+<div class="section" id="google-neural-machine-translation-nmt-on-otther-languages">
+<h3>Google Neural Machine Translation (NMT) on otther languages.<a class="headerlink" href="#google-neural-machine-translation-nmt-on-otther-languages" title="Permalink to this headline">#</a></h3>
+<p>In order to put into context the perfomance of Google NMT translation on Chichewa in relation to other languageas</p>
+<ol class="arabic simple">
+<li><p>Tatoeba English to Spanish. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">47.77%</span></code></p></li>
+<li><p>English-Luganda. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">9.68%%</span></code></p></li>
+<li><p>English-German. <code class="docutils literal notranslate"><span class="pre">BLEU</span> <span class="pre">score</span> <span class="pre">=</span> <span class="pre">17.85%</span></code></p></li>
+</ol>
+<p>As expected, the perfomrmance on high resource languages (Spanish and German) is very high.</p>
+</div>
+<div class="section" id="notes-about-about-evalauting-machine-translation-systems">
+<h3>Notes about about evalauting Machine Translation Systems<a class="headerlink" href="#notes-about-about-evalauting-machine-translation-systems" title="Permalink to this headline">#</a></h3>
+<p>Although BLEU score is perhaps the most commonly used metric for evaluating models of MT, its not the only one. There are other metrics such as <em>word error rate</em> (WER) and use of native speakers who can read the translations and rate them based on some scale. Furthermore, the BLEU score metric also depends on alot of other factors:</p>
+<ul class="simple">
+<li><p>The number of test sentences</p></li>
+<li><p>Whether reference translations are from one or multiple humans</p></li>
+<li><p>The length reference sentences</p></li>
+<li><p>and more</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../docs/datasets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Available NLP Datasets</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-input-data-files">Setup input data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-utility-functions">Define utility functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score">BLEU score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-for-evaluation">Datasets for evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-translations-based-on-online-sources">Dataset-1: Translations based on online sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-2-profensional-translation-of-a-political-speech">Dataset-2: Profensional translation of a political speech</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-3-translation-for-a-health-related-public-project">Dataset-3: Translation for a health related public project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-setup">Evaluation setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-computation">BLEU score computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-translation-api">Google translation API</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-bleu-score-for-english-to-chichewa-datasets">Calculate BLEU score for English to Chichewa datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-two-translators">BLEU score for dataset-1: Two translators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-translator-1">BLEU score for dataset-1: Translator-1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-1-translator-2">BLEU score for dataset-1: Translator-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-2">BLEU score for dataset-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-dataset-3">BLEU score for dataset-3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-scores-for-other-languages">BLEU scores for other languages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-spanish">BLEU score for English to Spanish</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-luganda">BLEU score for English to Luganda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bleu-score-for-english-to-german">BLEU score for English to German</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-neural-machine-translation-nmt-for-english-to-chichewa-translation">Google Neural Machine Translation (NMT) for English to Chichewa translation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-neural-machine-translation-nmt-on-otther-languages">Google Neural Machine Translation (NMT) on otther languages.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-about-about-evalauting-machine-translation-systems">Notes about about evalauting Machine Translation Systems</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dunstan Matekenya
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Jun 06, 2023.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
