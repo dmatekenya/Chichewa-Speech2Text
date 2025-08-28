@@ -127,4 +127,5 @@ models/
 !docs/images/
 !docs/images/**
 
-
+# Environments
+.env

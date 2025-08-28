@@ -1,0 +1,62 @@
+[
+  {
+    "audio_file": "mcp.wav",
+    "model_name": "finetuned_whisper",
+    "model_id": "dmatekenya/whisper-large-v3-chichewa",
+    "transcription": "Mosataya nthawi ya state president tinene kuti? Inutu mukupitatu pa 16 basi..",
+    "inference_time_seconds": 1.038,
+    "audio_duration_seconds": 11.8,
+    "real_time_factor": 0.088,
+    "timestamp": "2025-08-28T14:10:31.234257"
+  },
+  {
+    "audio_file": "mcp.wav",
+    "model_name": "base_whisper",
+    "model_id": "openai/whisper-large-v3",
+    "transcription": " Mwosata and Hava State President Tinene Guti inudu Mugubida Dupa 16 Bas",
+    "inference_time_seconds": 1.07,
+    "audio_duration_seconds": 11.8,
+    "real_time_factor": 0.091,
+    "timestamp": "2025-08-28T14:10:32.311343"
+  },
+  {
+    "audio_file": "mcp.wav",
+    "model_name": "meta_mms",
+    "model_id": "facebook/mms-1b-all",
+    "transcription": "mosata anthawi a stati prezidenti tinene kuti inu tuwu mukupita tu pa  basi",
+    "inference_time_seconds": 0.023,
+    "audio_duration_seconds": 11.8,
+    "real_time_factor": 0.002,
+    "timestamp": "2025-08-28T14:10:32.470180"
+  },
+  {
+    "audio_file": "bushiri.wav",
+    "model_name": "finetuned_whisper",
+    "model_id": "dmatekenya/whisper-large-v3-chichewa",
+    "transcription": "Hello a Malawi azanga konseko omwe muliko, ine ndine mwana wanu a Shepard Bushiri zikomo chifukwa chakuti aumene muliko uthenga kumene ukufikani. Ine uthenga ndi okuti ndikuyamba program yogawa chimanga kwa ma family kapena kwa anthu muno mu Malawi 1 million. Project imeneyi ipanga kuti chimanga chonse chimene chakhala chikugawidwa chikwana 17000 imene value yake ikhoza kukwanira.",
+    "inference_time_seconds": 2.588,
+    "audio_duration_seconds": 90.0,
+    "real_time_factor": 0.029,
+    "timestamp": "2025-08-28T14:10:35.071994"
+  },
+  {
+    "audio_file": "bushiri.wav",
+    "model_name": "base_whisper",
+    "model_id": "openai/whisper-large-v3",
+    "transcription": " Hello, I'm Malawe Azanga, Consul Kume Muliko. Ina ndine mwana wanu Shepard Bushiri, Zikomo. Chifaja kuti kumene muliko utengo mene ukufikani. Ine utenga ndo kuti ndigwemba program yo gawa chimanga kuma family kapena kuwa antumunu Malawi 1 million. Project imene hii ibanga kuti chimanga chonsi chimichekachu gawidwa. Chikuwa na 17,000 metru kitani imene value yake",
+    "inference_time_seconds": 2.872,
+    "audio_duration_seconds": 90.0,
+    "real_time_factor": 0.032,
+    "timestamp": "2025-08-28T14:10:37.953235"
+  },
+  {
+    "audio_file": "bushiri.wav",
+    "model_name": "meta_mms",
+    "model_id": "facebook/mms-1b-all",
+    "transcription": "elowa malawi azanga konse kumene muliko ine ndine mwana wanu a shepatbushiri zikomo achifa chakuti kumene muliko mu uthenga umenewu kufikani ine uthenga ndi wakuti ndikuyamba purogaramu yogawa chimanga kwa ma famile kapena kwa anthu muno mmalawi w miliyoni purojekiti imeneyi ipanga kuti chimanga chonse chimecheka chikgawidwa chikwana s  metro citan imene valu yake ikhoza kukwana f biliyoni malawi kocha ndikukamba zimenezi osati kuti ndinguwonetsera ayi koma nikukamba zimenezi ngati uthenga kwa anthu onse amene muli ndi chuma kapena katundu amene anunso mukhoza kupangapo kanthu mu dziko mwathu muno pakadali pano muli vuto la njala anthu akufa ku mu dziko ndi njala ndiye kawirikawiri anthu amalemelera m'mavuto kapena kupezerapo mwayi pamenepe pali mavuto uwu ndiuthenga kwa inu nonse amalawi amene muli ndi kuthekera kuti ngakhale muli mabizini sanu mfuna upanga ndalama koma olokena kake chosaniponi pa zimene muli nazozo tiyeni azinzathu a malawi akufa ni njala pakadali pano tipite m'midzimu tathandize a malawi azinzathu so uthenga umenewu ndiwa kwa wina liyense m'malawi amene ali ndi kuthekera kani thumba limodzi kamatumba awiri kani atatu tulukani tiyeni tipite ku njako kuli vuto ndayenda ine m'midzimu",
+    "inference_time_seconds": 0.969,
+    "audio_duration_seconds": 90.0,
+    "real_time_factor": 0.011,
+    "timestamp": "2025-08-28T14:10:40.040295"
+  }
+]

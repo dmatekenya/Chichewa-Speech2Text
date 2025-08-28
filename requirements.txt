@@ -1,0 +1,14 @@
+docutils>=0.18.1
+sphinx>=7.0.0
+myst-parser>=2.0.0
+jupyter-book>=0.15.0
+sphinx-book-theme>=1.0.0
+sphinx-multitoc-numbering>=0.1.3
+sphinx-external-toc>=0.3.1
+librosa
+torch
+transformers
+datasets
+pydub
+shutilwhich
+pandas
