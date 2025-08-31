@@ -16,3 +16,4 @@ parts:
     numbered: False
     chapters:
       - file: notebooks/MT-benchmarking
+      - file: notebooks/Chichewa_NLP_Test
